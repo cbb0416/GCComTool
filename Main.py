@@ -21,30 +21,6 @@ class Main:
 
         if s_com != "DISABLE":
             self.slave_com = SerialCom(s_com,"slave",s_baud)
-        
-        #创建接收任务
-        self.main_task = threading.Thread(target=self.main_task_func, name='main task thread')
-        self.main_task.start()   
-    
-    def main_task_func(self):
-##        while True:
-##            if self.m_com != "DISABLE":
-##                if len(self.master_com.recv_buffer_list) != 0:
-##                    buffer = self.master_com.recv_buffer_list.pop(0)
-##                    recv_time = self.master_com.recv_time.pop(0)
-##                    print("Master time: ", recv_time)
-##                    self.master_port.deocde(buffer)
-##                    
-##            if self.s_com != "DISABLE":
-##                if len(self.slave_com.recv_buffer_list) != 0:
-##                    buffer = self.slave_com.recv_buffer_list.pop(0)
-##                    recv_time = self.slave_com.recv_time.pop(0)
-##                    print("Slave, time: ", recv_time)
-##                    self.slave_port.deocde(buffer)
-
-            time.sleep(0.01)
-    
-
 
 if '__main__' == __name__:
     #main = Main("COM10", "COM11")
